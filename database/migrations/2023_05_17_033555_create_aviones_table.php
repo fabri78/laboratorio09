@@ -11,15 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pasajeros', function (Blueprint $table) {
+        Schema::create('aviones', function (Blueprint $table) {
             $table->id();
-            $table->text("nombres");
-            $table->text("apellidos");
-            $table->string("DNI");
-            $table->integer("Origen");
-            $table->integer("Destino");
-            $table->string("Celular");
-            $table->integer("Monto");
+            $table->integer("modelo");
+            $table->string("n_asientos");
+            $table->string("h_piloto");
+            $table->string("peso_avion");
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('auto');
+        Schema::dropIfExists('aviones');
     }
 };
